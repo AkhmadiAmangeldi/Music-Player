@@ -14,7 +14,7 @@
 }
 
 /* Стили для хедера */
-.header {
+/* .header {
   background-color: #000;
   color: white;
   display: flex;
@@ -27,10 +27,12 @@
   background-color: #333;
   border: none;
   padding: 10px;
-  width: 300px;
+  padding-left: 20px;
+  width: 350px;
   color: white;
   border-radius: 20px;
   outline: none;
+  font-size: 18px;
 }
 
 .header button {
@@ -45,7 +47,7 @@
 
 .header button:hover {
   background-color: lightgray;
-}
+} */
 
 /* Стили для боковой панели (Sidebar) */
 .sidebar a {
