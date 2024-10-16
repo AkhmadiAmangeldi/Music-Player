@@ -1,0 +1,26 @@
+.sidebar {
+    width: 20%;
+    background-color: #121212;
+    padding: 20px;
+  }
+
+  .sidebar a {
+    text-decoration: none;
+  }
+  
+  .sidebar a button {
+    width: 90%;
+    padding: 10px;
+    background-color: #1db954;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .sidebar a button:hover {
+    background-color: #1aa34a;
+  }
+  

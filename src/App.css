@@ -1,4 +1,3 @@
-/* Основные стили для всего приложения */
 .app {
   display: flex;
   flex-direction: column;
@@ -13,111 +12,19 @@
   flex-grow: 1;
 }
 
-/* Стили для хедера */
-.header {
-  background-color: #000;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-.header input {
+.app-body::before {
+  content: '';
+  width: 1px;
   background-color: #333;
-  border: none;
-  padding: 10px;
-  width: 300px;
-  color: white;
-  border-radius: 20px;
-  outline: none;
-}
-
-.header button {
-  background-color: white;
-  color: #000;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.header button:hover {
-  background-color: lightgray;
-}
-
-/* Стили для боковой панели (Sidebar) */
-.sidebar a {
-  text-decoration: none;
-}
-
-.sidebar a button {
-  width: 100%;
-  padding: 10px;
-  background-color: #1db954;
-  border: none;
-  color: white;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  text-align: left;
-}
-
-.sidebar a button:hover {
-  background-color: #1aa34a;
-}
-.login-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
-  background-color: #121212;
-  color: #fff;
+  position: absolute;
+  left: 20%; 
 }
 
-.login-page form {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-}
-
-.login-page form div {
-  margin-bottom: 20px;
-}
-
-.login-page form label {
-  margin-bottom: 10px;
-}
-
-.login-page form input {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #333;
-  color: white;
-}
-
-.login-page button {
-  padding: 10px;
-  border-radius: 20px;
-  border: none;
-  background-color: #1db954;
-  color: white;
-  cursor: pointer;
-}
-
-.login-page button:hover {
-  background-color: #1aa34a;
-}
-
-
-/* Основные стили для контента */
 .content {
-  flex-grow: 1;
+  width: 80%;
   padding: 20px;
-  overflow-y: auto;
+  position: relative; 
 }
 
 .content h2 {
@@ -155,7 +62,6 @@
   outline: none;
 }
 
-/* Стили для кнопок */
 button {
   margin: 5px;
   padding: 10px 20px;
@@ -170,4 +76,6 @@ button {
 button:hover {
   background-color: #1aa34a;
 }
+
+
 

@@ -25,26 +25,29 @@
     font-style: inherit;
     color: white;
   }
+
   
-  input {
-    padding: 8px 16px;
-    border-radius: 20px;
+  .header input {
+    background-color: #333;
     border: none;
-    margin-right: 10px;
+    padding: 10px;
+    width: 300px;
+    color: white;
+    border-radius: 20px;
+    outline: none;
   }
   
-  button {
-    background-color: #ffffff;
-    color: #1db954;
+  .header button {
+    background-color: white;
+    color: #000;
     border: none;
     padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
-    font-size: 16px;
+    margin-left: 10px;
   }
   
-  button:hover {
-    background-color: #1aa34a;
-    color: white;
+  .header button:hover {
+    background-color: lightgray;
   }
   
