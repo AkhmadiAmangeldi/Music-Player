@@ -1,8 +1,7 @@
-/* Основные стили для всего приложения */
 .app {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 120vh;
   background-color: #121212;
   color: white;
   font-family: 'Arial', sans-serif;
@@ -13,45 +12,21 @@
   flex-grow: 1;
 }
 
-/* Стили для хедера */
-/* .header {
-  background-color: #000;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-.header input {
+.app-body::before {
+  content: '';
+  width: 1px;
   background-color: #333;
-  border: none;
-  padding: 10px;
-  padding-left: 20px;
-  width: 350px;
-  color: white;
-  border-radius: 20px;
-  outline: none;
-  font-size: 18px;
+  height: 100vh; 
+  position: absolute;
+  left: 20%; 
 }
 
-.header button {
-  background-color: white;
-  color: #000;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.header button:hover {
-  background-color: lightgray;
-} */
-
-/* Стили для боковой панели (Sidebar) */
 .sidebar a {
   text-decoration: none;
+}
+
+.sidebar h3 {
+  text-align: center;
 }
 
 
@@ -119,11 +94,11 @@
 }
 
 
-/* Основные стили для контента */
 .content {
   flex-grow: 1;
   padding: 20px;
   overflow-y: auto;
+  margin-left: 50px;
 }
 
 .content h2 {
@@ -161,7 +136,6 @@
   outline: none;
 }
 
-/* Стили для кнопок */
 button {
   margin: 5px;
   padding: 10px 20px;

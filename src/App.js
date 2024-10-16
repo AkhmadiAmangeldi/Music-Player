@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Playlists from './pages/Playlists';
 import Podcasts from './pages/Podcasts';
 import LoginPage from './pages/LoginPage';
+import withAuthProtection from './hoc/withAuthProtection'; 
 import './App.css';
 
 const App = () => {
@@ -21,15 +22,18 @@ const App = () => {
 
   const handleLogin = () => {
     setIsAuthenticated(true);
-    navigate('/'); // Перенаправляем на главную страницу после входа
+    navigate('/'); 
   };
 
   const handleLogout = () => {
     setIsAuthenticated(false);
     localStorage.removeItem('isAuthenticated');
-    navigate('/'); // Перенаправляем на главную страницу после выхода
+    navigate('/'); 
   };
   
+  const ProtectedPlaylists = withAuthProtection(Playlists);
+  const ProtectedPodcasts = withAuthProtection(Podcasts);
+
   return (
     <div className="app">
       <Header isAuthenticated={isAuthenticated} onLogout={handleLogout} />
@@ -41,21 +45,14 @@ const App = () => {
             
             <Route
               path="/playlists"
-              element={
-                isAuthenticated 
-                  ? <Playlists /> 
-                  : <Navigate to="/login" /> 
-              }
+              element={<ProtectedPlaylists isAuthenticated={isAuthenticated} />}
             />
             <Route
               path="/podcasts"
-              element={
-                isAuthenticated 
-                  ? <Podcasts /> 
-                  : <Navigate to="/login" /> 
-              }
+              element={<ProtectedPodcasts isAuthenticated={isAuthenticated} />}
             />
 
+      
             <Route
               path="/login"
               element={isAuthenticated ? <Navigate to="/" /> : <LoginPage onLogin={handleLogin} />}

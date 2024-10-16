@@ -9,10 +9,9 @@ const LoginPage = ({ onLogin }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Пример простой авторизации
     if (username === 'admin' && password === '123') {
-      onLogin(); // Устанавливаем состояние авторизованного пользователя
-      navigate('/'); // Перенаправляем пользователя на главную страницу после успешного входа
+      onLogin(); 
+      navigate('/'); 
     } else {
       setError('Неверное имя пользователя или пароль');
     }

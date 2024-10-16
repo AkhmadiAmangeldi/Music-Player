@@ -5,6 +5,10 @@
     align-items: center;
     cursor: pointer; 
   }
+
+  .header-title {
+    font-size: 25px;
+  }
   
   .header-logo {
     width: 50px;

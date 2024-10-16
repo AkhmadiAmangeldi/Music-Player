@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Header.css'; // Убедитесь, что стили подключены
+import './Header.css'; 
 
 const Header = ({ isAuthenticated, onLogout }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -8,7 +8,7 @@ const Header = ({ isAuthenticated, onLogout }) => {
 
   const handleSearchChange = useCallback((e) => {
     setSearchTerm(e.target.value);
-  }, []);
+  }, [searchTerm]);
 
   const handleLoginClick = () => {
     navigate('/login');
@@ -26,7 +26,7 @@ const Header = ({ isAuthenticated, onLogout }) => {
           alt="unTaspa Logo" 
           className="header-logo" 
         />
-        <span className="header-title">unTaspa</span> {/* Текст рядом с логотипом */}
+        <span className="header-title">unTaspa</span> {}
       </div>
       <input
         type="text"

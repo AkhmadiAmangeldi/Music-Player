@@ -9,4 +9,33 @@
   }
 
 
+  .cardBox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .cardBox li {
+    width: 310px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .card1 {
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+  }
+  .card2 {
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+  }
+  .card3 {
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+  }
+
   

@@ -11,6 +11,7 @@ const Sidebar = () => {
       <Link to="/podcasts">
         <button>Подкасты</button>
       </Link>
+      
     </div>
   );
 };

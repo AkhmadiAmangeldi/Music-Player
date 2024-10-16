@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Navigate } from 'react-router-dom';
 
-export const withAuthProtection = (WrappedComponent) => {
+
+const withAuthProtection = (WrappedComponent) => {
+
+
   return (props) => {
+
+    useEffect(() => {
+      console.log(`${WrappedComponent.name} - рендер начался`);
+      return () => {
+        console.log(`${WrappedComponent.name} - рендер завершен`);
+      };
+    }, []);
+
     const { isAuthenticated } = props;
 
-    // Если пользователь не авторизован, перенаправляем на страницу логина
     if (!isAuthenticated) {
       return <Navigate to="/login" />;
     }
@@ -13,3 +23,5 @@ export const withAuthProtection = (WrappedComponent) => {
     return <WrappedComponent {...props} />;
   };
 };
+
+export default withAuthProtection;
