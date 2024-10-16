@@ -1,21 +1,12 @@
-.home-container {
+.home {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-left: 30px;
     height: 100vh;
     background-color: #121212;
     color: white;
+    
   }
-  
-  .logo {
-    width: 200px; /* Размер логотипа */
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
-  .home-title {
-    font-size: 48px;
-    font-weight: bold;
-  }
+
+
   
