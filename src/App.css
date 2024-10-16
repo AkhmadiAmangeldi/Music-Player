@@ -57,14 +57,17 @@
 
 .sidebar a button {
   width: 100%;
+  height: 50px;
   padding: 10px;
   background-color: #1db954;
   border: none;
   color: white;
-  border-radius: 20px;
+  border-radius: 50px;
   margin-bottom: 10px;
   cursor: pointer;
   text-align: left;
+  font-size: 18px;
+  padding-left: 15px;
 }
 
 .sidebar a button:hover {
