@@ -6,15 +6,12 @@ import Home from './pages/Home';
 import Playlists from './pages/Playlists';
 import Podcasts from './pages/Podcasts';
 import LoginPage from './pages/LoginPage';
-import Modal from './components/Modal';
 import './App.css';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(
     localStorage.getItem('isAuthenticated') === 'true'
   );
-  const [showModal, setShowModal] = useState(false);
-  const [redirectPath, setRedirectPath] = useState(null);
 
   const navigate = useNavigate();
 
@@ -24,12 +21,7 @@ const App = () => {
 
   const handleLogin = () => {
     setIsAuthenticated(true);
-    if (redirectPath) {
-      navigate(redirectPath);
-      setRedirectPath(null);
-    } else {
-      navigate('/');
-    }
+    navigate('/'); // Перенаправляем на главную страницу после входа
   };
 
   const handleLogout = () => {
@@ -37,21 +29,7 @@ const App = () => {
     localStorage.removeItem('isAuthenticated');
     navigate('/'); // Перенаправляем на главную страницу после выхода
   };
-
-  const handleProtectedPageAttempt = (path) => {
-    setRedirectPath(path);
-    setShowModal(true);
-  };
-
-  const handleModalConfirm = () => {
-    setShowModal(false);
-    navigate('/login');
-  };
-
-  const handleModalCancel = () => {
-    setShowModal(false);
-  };
-
+  
   return (
     <div className="app">
       <Header isAuthenticated={isAuthenticated} onLogout={handleLogout} />
@@ -86,9 +64,6 @@ const App = () => {
         </div>
       </div>
 
-      {showModal && (
-        <Modal onConfirm={handleModalConfirm} onCancel={handleModalCancel} />
-      )}
     </div>
   );
 };

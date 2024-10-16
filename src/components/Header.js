@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Header.css'; // Убедитесь, что стили подключены
 
 const Header = ({ isAuthenticated, onLogout }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -10,11 +11,23 @@ const Header = ({ isAuthenticated, onLogout }) => {
   }, []);
 
   const handleLoginClick = () => {
-    navigate('/login'); // Перенаправляем на страницу входа
+    navigate('/login');
+  };
+
+  const handleLogoClick = () => {
+    navigate('/');
   };
 
   return (
     <div className="header">
+      <div className="header-left" onClick={handleLogoClick}>
+        <img 
+          src={require('../images/Logos.png')} 
+          alt="unTaspa Logo" 
+          className="header-logo" 
+        />
+        <span className="header-title">unTaspa</span> {/* Текст рядом с логотипом */}
+      </div>
       <input
         type="text"
         placeholder="Что хочешь включить?"
