@@ -26,7 +26,7 @@ function App() {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://api.spotify.com/v1/search?q=${keyword}&type=track&offset=${resultOffset}`,
+        `https://v1.nocodeapi.com/akhmadi/spotify/KwcXQbXlpXldjlQR/search?q=${keyword}&type=track&offset=${resultOffset}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -146,18 +146,11 @@ function App() {
           <div className="col-12 py-5 text-center">
             <h1>
               <i className="bi bi-music-note-list mx-3"></i>
-              v-music
+              Player-Music
             </h1>
-            <h3 className="py-5">Discover music in 30 seconds</h3>
+            <h3 className="py-5">Preview all the music available on our site</h3>
             <div>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-outline-dark"
-                href="https://github.com/Vishesh-Pandey/v-music"
-              >
-                <i className="bi bi-github mx-2"></i>Github
-              </a>
+              
             </div>
           </div>
         </div>
