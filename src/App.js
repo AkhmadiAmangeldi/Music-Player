@@ -5,8 +5,8 @@ import CreatePlaylist from "./components/CreatePlaylist";
 import { initializePlaylist } from "./initialize";
 import Navbar from "./components/Navbar";
 import { MusicContext } from "./Context";
-import Home from "./pages/home";
 import Login from "./pages/auth/login";
+import { setClientToken } from "./spotify";
 
 function App() {
   const [keyword, setKeyword] = useState("");
@@ -87,11 +87,26 @@ function App() {
     setLikedMusic(JSON.parse(localStorage.getItem("likedMusic")));
     setpinnedMusic(JSON.parse(localStorage.getItem("pinnedMusic")));
   }, [setIsLoading, setLikedMusic, setpinnedMusic]);
-
-  return (
+  useEffect(() => {
+    const token = window.localStorage.getItem("token");
+    const hash = window.location.hash;
+    window.location.hash = "";
+    if (!token && hash) {
+      const _token = hash.split("&")[0].split("=")[1];
+      window.localStorage.setItem("token", _token);
+      setToken(_token);
+      setClientToken(_token);
+    } else {
+      setToken(token);
+      setClientToken(token);
+    }
+  }, []);
+    
+  return !token? (
+    <Login />
+  ) : (
     <>
 
-    <Login />
 
       <Navbar
         keyword={keyword}
@@ -101,7 +116,6 @@ function App() {
       />
 
       
-
       <div className="container">
         <div className={`row ${isLoading ? "" : "d-none"}`}>
           <div className="col-12 py-5 text-center">
@@ -169,7 +183,6 @@ function App() {
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <CreatePlaylist />
       </div>
       
     </>
