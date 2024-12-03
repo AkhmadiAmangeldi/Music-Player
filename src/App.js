@@ -5,6 +5,8 @@ import CreatePlaylist from "./components/CreatePlaylist";
 import { initializePlaylist } from "./initialize";
 import Navbar from "./components/Navbar";
 import { MusicContext } from "./Context";
+import Home from "./pages/home";
+import Login from "./pages/auth/login";
 
 function App() {
   const [keyword, setKeyword] = useState("");
@@ -88,12 +90,17 @@ function App() {
 
   return (
     <>
+
+    <Login />
+
       <Navbar
         keyword={keyword}
         setKeyword={setKeyword}
         handleKeyPress={handleKeyPress}
         fetchMusicData={fetchMusicData}
       />
+
+      
 
       <div className="container">
         <div className={`row ${isLoading ? "" : "d-none"}`}>
@@ -164,6 +171,7 @@ function App() {
       >
         <CreatePlaylist />
       </div>
+      
     </>
   );
 }
